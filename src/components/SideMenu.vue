@@ -28,7 +28,6 @@ export default {
         for (let i = 1; i <= 3; i++){
           document.getElementById("it" + i).classList.add('active');
         }
-        console.log("menu activated")
       }, 100);
     },
     deactivate() {
