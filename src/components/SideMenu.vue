@@ -55,7 +55,7 @@ export default {
       let item = document.getElementById("it" + n);
       item.style.backgroundColor = "rgba(255,255,255, 100%)";
       item.style.border = "1px solid";
-      item.style.boxShadow = "0px 0px 15px #fff";
+      item.style.boxShadow = "0px 0px 35px #fff";
     },
     scrollHandler() {
       let toScroll = document.body.scrollHeight;
@@ -109,7 +109,7 @@ export default {
 
 
 .menu-item {
-  width: 100px;
+  width: 95px;
   height: 15px;
   border-radius: 15px;
   background-color: rgba(255, 255, 255, 70%);
@@ -129,14 +129,14 @@ export default {
 
 .item-title {
   position: relative;
-  right: 100px;
+  right: 1px;
   top: -12px;
   font-family: "Roboto Mono", monospace;
   color: #f2f2f2;
   font-weight: 800;
 
-  width: 100px;
-  border-radius: 15px;
+  width: 96px;
+  border-radius: 25px;
   background-color: #181818;
 }
 
@@ -146,10 +146,6 @@ export default {
     right: -40px;
   }
 
-  /*.menu-item {*/
-  /*  width: 20px;*/
-  /*  height: 20px;*/
-  /*}*/
 }
 
 </style>
