@@ -1,7 +1,7 @@
 <template>
   <div class="sideMenu" @mouseover="activate" @mouseleave="deactivate">
     <ul class="menu-item-list" v-bind:class="{active : isActive}">
-      <li v-bind:class="{active : !isActive}" v-for="(i, index) in items" v-bind:id="'it' + (index + 1)" class="menu-item" @click="transitTo(index + 1)">
+      <li v-for="(i, index) in items" v-bind:id="'it' + (index + 1)" class="menu-item" @click="transitTo(index + 1)">
         <p v-if="isActive" class="item-title">{{ i.title }}</p>
       </li>
     </ul>
@@ -22,15 +22,20 @@ export default {
     }
   },
   methods: {
-    //TODO: -resolve changing in work
     activate() {
       this.isActive = true;
-      for (let i = 1; i <= 3; i++){
-        document.getElementById("it" + i).classList.add('active');
-      }
+      setTimeout(() => {
+        for (let i = 1; i <= 3; i++){
+          document.getElementById("it" + i).classList.add('active');
+        }
+        console.log("menu activated")
+      }, 100);
     },
     deactivate() {
       this.isActive = false;
+      for (let i = 1; i <= 3; i++){
+        document.getElementById("it" + i).classList.remove('active');
+      }
     },
     transitTo(hookN) {
 
