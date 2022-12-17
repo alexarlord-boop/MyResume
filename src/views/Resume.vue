@@ -21,11 +21,8 @@
         <CardInfo v-for="card in cardsStackBack">{{ card.innerText }}</CardInfo>
       </div>
 
-      <div class="links-group">
-        <IconGit class="icon-lnk" @click="GoToLnk(cardsLink[0].lnk)"></IconGit>
-        <IconVK class="icon-lnk" @click="GoToLnk(cardsLink[1].lnk)"></IconVK>
-        <IconLNKD class="icon-lnk" @click="GoToLnk(cardsLink[2].lnk)"></IconLNKD>
-      </div>
+      <ResumeLinks></ResumeLinks>
+
     </div>
   </div>
 </template>
@@ -37,10 +34,12 @@ import CardInfo from "@/components/CardInfo.vue";
 import IconGit from "@/components/icons/IconGit.vue";
 import IconVK from "@/components/icons/IconVK.vue";
 import IconLNKD from "@/components/icons/IconLNKD.vue";
+import ResumeLinks from "@/components/ResumeLinks.vue";
 
 export default {
   name: "Resume",
   components: {
+    ResumeLinks,
     CardInfo,
     IconGit,
     IconVK,
@@ -57,10 +56,7 @@ export default {
       cardsStackFront: [{innerText: 'Git'}, {innerText: 'SQL'}, {innerText: 'JavaScript'}, {innerText: 'CSS3/HTML5'},
         {innerText: 'Figma'}, {innerText: 'Vue.js'}, {innerText: 'Node.js'}],
 
-      cardsStackBack: [{innerText: 'Java Spring Boot'}, {innerText: 'MS SQL Server'}, {innerText: 'PostgreSQL'}, {innerText: 'Java'}, {innerText: 'Python'}],
-
-      cardsLink: [{innerText: 'github', lnk: 'https://github.com/alexarlord-boop/alexarlord-boop/blob/main/README.md'},
-        {innerText: 'VK', lnk: 'https://vk.com/alexarlord'}, {innerText: 'LinkedIn', lnk: 'https://www.linkedin.com/in/aleksandr-petrunin-b4b720259/'}],
+      cardsStackBack: [{innerText: 'Java Spring Boot'}, {innerText: 'MS SQL Server'}, {innerText: 'PostgreSQL'}, {innerText: 'Java'}, {innerText: 'Python'}]
     }
   },
   watch: {
@@ -72,9 +68,7 @@ export default {
     }
   },
   methods: {
-    GoToLnk(lnk) {
-      window.location.href = lnk;
-    },
+
     UpdateScrolledPercentage() {
       let h = document.documentElement,
           b = document.body,
@@ -121,21 +115,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.links-group {
-  left: 200px;
-  width: 300px;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-around;
-}
-.icon-lnk {
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-  transition: 0.1s ease-out;
 
-}
 
 .cards-wrap {
   height: 240vh;
@@ -147,7 +127,7 @@ export default {
 }
 
 .cards-group {
-  width: 400px;
+
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -200,16 +180,6 @@ svg {
   svg {
     transform: scale(5);
     top: 300px;
-  }
-  .links-group{
-    width: 200px;
-    top: -250px;
-    left: 0;
-  }
-
-  .icon-lnk {
-    width: 10px;
-    height: 10px;
   }
 }
 </style>
