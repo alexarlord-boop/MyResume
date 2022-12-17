@@ -57,36 +57,42 @@ export default {
           sh = 'scrollHeight';
       return (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight);
     },
-    LineDrawer() {
-      document.getElementById('line').style.strokeDashoffset = String(this.pl - (this.pl * this.GetScrolledPercentage()));
+    LineDrawer(percentage) {
+      document.getElementById('line').style.strokeDashoffset = String(this.pl - (this.pl * percentage));
     },
-    MoveTitleParallax() {
-      let scrollPerc = this.GetScrolledPercentage();
-
-      document.getElementById('title').style.top = String(30 + this.GetScrolledPercentage() * 400) + "px";
-
-      if (scrollPerc <= 0.43) {
+    MoveTitleParallax(percentage) {
+      document.getElementById('title').style.top = String(30 + percentage * 400) + "px";
+    },
+    ChangeTitleText(percentage) {
+      if (percentage <= 0.43) {
         document.getElementById('title').innerText = 'About';
       }
-      if (scrollPerc > 0.43 && scrollPerc <= 0.80) {
+      if (percentage > 0.43 && percentage <= 0.80) {
         document.getElementById('title').innerText = 'Stack';
       }
-      if (scrollPerc > 0.80) {
+      if (percentage > 0.80) {
         document.getElementById('title').innerText = 'Links';
       }
+    },
+    MoveBackground() {
+      let scrollPerc = this.GetScrolledPercentage();
+      this.LineDrawer(scrollPerc);
+      this.MoveTitleParallax(scrollPerc);
+      this.ChangeTitleText(scrollPerc);
     }
   },
   mounted() {
+    console.log('mounted');
     // setting values to draw an svg pattern
     let line = document.getElementById('line');
     this.pl = line.getTotalLength();
     line.style.strokeDasharray = this.pl;
     line.style.strokeDashoffset = this.pl;
 
-    document.addEventListener('scroll', () => {
-      this.LineDrawer();
-      this.MoveTitleParallax();
-    });
+    document.addEventListener('scroll', this.MoveBackground);
+  },
+  unmounted() {
+    document.removeEventListener('scroll', this.MoveBackground);
   }
 }
 </script>
