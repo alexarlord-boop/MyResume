@@ -14,7 +14,11 @@
       <CardInfo v-for="(card, index) in cardsAbout" :card-id="'card'+index">{{ card.innerText }}</CardInfo>
 
       <div class="cards-group">
-        <CardInfo v-for="card in cardsStack">{{ card.innerText }}</CardInfo>
+        <CardInfo v-for="card in cardsStackFront">{{ card.innerText }}</CardInfo>
+      </div>
+
+      <div class="cards-group">
+        <CardInfo v-for="card in cardsStackBack">{{ card.innerText }}</CardInfo>
       </div>
 
       <div class="cards-group">
@@ -42,10 +46,9 @@ export default {
         {innerText: "I am passionate about software development and making product looks AMAZING!"},
         {innerText: "I've worked as a full-stack developer for 1.5 years!"},
       ],
-      cardsStack: [{innerText: 'git'}, {innerText: 'Java Spring'}, {innerText: 'MS SQL'},
-        {innerText: 'PostgreSQL'}, {innerText: 'JavaScript'}, {innerText: 'CSS/HTML'},
-        {innerText: 'Vue.js'}, {innerText: 'Node.js'},
-        {innerText: 'Python'}, {innerText: 'Linux'}],
+      cardsStackFront: [{innerText: 'Git'}, {innerText: 'SQL'}, {innerText: 'JavaScript'}, {innerText: 'CSS3/HTML5'},
+        {innerText: 'Figma'}, {innerText: 'Vue.js'}, {innerText: 'Node.js'}],
+      cardsStackBack: [{innerText: 'Java Spring Boot'}, {innerText: 'MS SQL Server'}, {innerText: 'PostgreSQL'},{innerText: 'Java'}, {innerText: 'Python'}],
       cardsLink: [{innerText: 'github', lnk: 'https://github.com/alexarlord-boop/alexarlord-boop/blob/main/README.md'},
         {innerText: 'VK', lnk: ''}],
     }
@@ -77,10 +80,10 @@ export default {
       if (percentage <= 0.33) {
         document.getElementById('title').innerText = 'About';
       }
-      if (percentage > 0.33 && percentage <= 0.76) {
+      if (percentage > 0.33 && percentage <= 0.86) {
         document.getElementById('title').innerText = 'Stack';
       }
-      if (percentage > 0.76) {
+      if (percentage > 0.86) {
         document.getElementById('title').innerText = 'Links';
       }
     },
