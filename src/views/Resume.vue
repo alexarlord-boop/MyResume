@@ -37,6 +37,7 @@ export default {
   data() {
     return {
       pl: 0,
+      percentage: 0,
       cardsAbout: [{innerText: "I am an IT student, seeking for improvement in computer science field."},
         {innerText: "I am passionate about software development and making product looks AMAZING!"},
         {innerText: "I've worked as a full-stack developer for 1.5 years!"},
@@ -49,13 +50,22 @@ export default {
         {innerText: 'VK', lnk: ''}],
     }
   },
+  watch: {
+    percentage() {
+      let scrollPerc = this.percentage;
+      this.LineDrawer(scrollPerc);
+      this.MoveTitleParallax(scrollPerc);
+      this.ChangeTitleText(scrollPerc);
+    }
+  },
   methods: {
-    GetScrolledPercentage() {
+    UpdateScrolledPercentage() {
       let h = document.documentElement,
           b = document.body,
           st = 'scrollTop',
           sh = 'scrollHeight';
-      return (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight);
+      this.percentage = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight);
+      console.log(this.percentage);
     },
     LineDrawer(percentage) {
       document.getElementById('line').style.strokeDashoffset = String(this.pl - (this.pl * percentage));
@@ -75,10 +85,7 @@ export default {
       }
     },
     MoveBackground() {
-      let scrollPerc = this.GetScrolledPercentage();
-      this.LineDrawer(scrollPerc);
-      this.MoveTitleParallax(scrollPerc);
-      this.ChangeTitleText(scrollPerc);
+      this.UpdateScrolledPercentage();
     }
   },
   mounted() {
