@@ -63,7 +63,7 @@ export default {
     MoveTitleParallax() {
       let scrollPerc = this.GetScrolledPercentage();
 
-      document.getElementById('title').style.top = String(30 + this.GetScrolledPercentage() * 300) + "px";
+      document.getElementById('title').style.top = String(30 + this.GetScrolledPercentage() * 400) + "px";
 
       if (scrollPerc <= 0.43) {
         document.getElementById('title').innerText = 'About';

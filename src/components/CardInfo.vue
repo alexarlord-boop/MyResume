@@ -44,8 +44,9 @@ export default {
 
 @media screen and (min-width: 325px) and (max-width: 600px){
   .card {
+    font-size: 1.4em;
     max-width: 15em;
-    min-width: 4em;
+    min-width: 5em;
   }
 }
 
