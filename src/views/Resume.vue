@@ -71,16 +71,16 @@ export default {
       document.getElementById('line').style.strokeDashoffset = String(this.pl - (this.pl * percentage));
     },
     MoveTitleParallax(percentage) {
-      document.getElementById('title').style.top = String(30 + percentage * 400) + "px";
+      document.getElementById('title').style.top = String(percentage * 400) + "px";
     },
     ChangeTitleText(percentage) {
       if (percentage <= 0.33) {
         document.getElementById('title').innerText = 'About';
       }
-      if (percentage > 0.33 && percentage <= 0.66) {
+      if (percentage > 0.33 && percentage <= 0.76) {
         document.getElementById('title').innerText = 'Stack';
       }
-      if (percentage > 0.66) {
+      if (percentage > 0.76) {
         document.getElementById('title').innerText = 'Links';
       }
     },
@@ -157,9 +157,7 @@ svg {
     height: 200vh;
   }
 
-  .cards-group {
-    max-width: 15em;
-  }
+
 
 
 
