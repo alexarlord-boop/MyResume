@@ -170,7 +170,7 @@ svg {
 
 .title-parallax {
   position: fixed;
-
+  top: 0;
   line-height: 150px;
   font-size: 18em;
   opacity: 0.2;
