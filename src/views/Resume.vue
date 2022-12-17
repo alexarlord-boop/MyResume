@@ -21,8 +21,10 @@
         <CardInfo v-for="card in cardsStackBack">{{ card.innerText }}</CardInfo>
       </div>
 
-      <div class="cards-group">
-        <CardInfo v-for="card in cardsLink"><a :href="card.lnk">{{ card.innerText }}</a></CardInfo>
+      <div class="links-group">
+        <IconGit class="icon-lnk" @click="GoToLnk(cardsLink[0].lnk)"></IconGit>
+        <IconVK class="icon-lnk" @click="GoToLnk(cardsLink[1].lnk)"></IconVK>
+        <IconLNKD class="icon-lnk"></IconLNKD>
       </div>
     </div>
   </div>
@@ -32,11 +34,17 @@
 //TODO: -scroll functions optimisation
 //TODO: -refactor mobile version via @media
 import CardInfo from "@/components/CardInfo.vue";
+import IconGit from "@/components/icons/IconGit.vue";
+import IconVK from "@/components/icons/IconVK.vue";
+import IconLNKD from "@/components/icons/IconLNKD.vue";
 
 export default {
   name: "Resume",
   components: {
-    CardInfo
+    CardInfo,
+    IconGit,
+    IconVK,
+    IconLNKD
   },
   data() {
     return {
@@ -48,9 +56,11 @@ export default {
       ],
       cardsStackFront: [{innerText: 'Git'}, {innerText: 'SQL'}, {innerText: 'JavaScript'}, {innerText: 'CSS3/HTML5'},
         {innerText: 'Figma'}, {innerText: 'Vue.js'}, {innerText: 'Node.js'}],
-      cardsStackBack: [{innerText: 'Java Spring Boot'}, {innerText: 'MS SQL Server'}, {innerText: 'PostgreSQL'},{innerText: 'Java'}, {innerText: 'Python'}],
+
+      cardsStackBack: [{innerText: 'Java Spring Boot'}, {innerText: 'MS SQL Server'}, {innerText: 'PostgreSQL'}, {innerText: 'Java'}, {innerText: 'Python'}],
+
       cardsLink: [{innerText: 'github', lnk: 'https://github.com/alexarlord-boop/alexarlord-boop/blob/main/README.md'},
-        {innerText: 'VK', lnk: ''}],
+        {innerText: 'VK', lnk: 'https://vk.com/alexarlord'}],
     }
   },
   watch: {
@@ -62,6 +72,9 @@ export default {
     }
   },
   methods: {
+    GoToLnk(lnk) {
+      window.location.href = lnk;
+    },
     UpdateScrolledPercentage() {
       let h = document.documentElement,
           b = document.body,
@@ -107,7 +120,29 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+.links-group {
+  left: 200px;
+  width: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.icon-lnk {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: 0.1s ease-out;
+
+  filter: blur(1px);
+
+  &:hover {
+    transform: scale(1.4);
+    filter: blur(0px);
+  }
+}
+
 .cards-wrap {
   height: 240vh;
   margin: 0;
@@ -167,9 +202,6 @@ svg {
   .title-parallax {
     font-size: 10em;
   }
-
-
-
 
 
   svg {
