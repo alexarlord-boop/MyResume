@@ -126,7 +126,6 @@ svg {
 .title-parallax {
   position: fixed;
   top: 30px;
-  left: 100px;
 
   font-size: 7em;
   opacity: 0.3;
@@ -143,8 +142,13 @@ svg {
 @media screen and (min-width: 325px) and (max-width: 600px) {
   .cards-wrap {
     height: 200vh;
-    justify-content: space-evenly;
   }
+
+  .cards-group {
+    max-width: 15em;
+  }
+
+
 
   svg {
     transform: scale(5);
