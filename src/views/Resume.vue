@@ -74,13 +74,13 @@ export default {
       document.getElementById('title').style.top = String(30 + percentage * 400) + "px";
     },
     ChangeTitleText(percentage) {
-      if (percentage <= 0.43) {
+      if (percentage <= 0.33) {
         document.getElementById('title').innerText = 'About';
       }
-      if (percentage > 0.43 && percentage <= 0.80) {
+      if (percentage > 0.33 && percentage <= 0.66) {
         document.getElementById('title').innerText = 'Stack';
       }
-      if (percentage > 0.80) {
+      if (percentage > 0.66) {
         document.getElementById('title').innerText = 'Links';
       }
     },
