@@ -74,7 +74,7 @@ export default {
       document.getElementById('line').style.strokeDashoffset = String(this.pl - (this.pl * percentage));
     },
     MoveTitleParallax(percentage) {
-      document.getElementById('title').style.top = String(percentage * 400) + "px";
+      document.getElementById('title').style.top = String(percentage * 70) + "%";
     },
     ChangeTitleText(percentage) {
       if (percentage <= 0.33) {
@@ -141,10 +141,10 @@ svg {
 
 .title-parallax {
   position: fixed;
-  top: 30px;
 
-  font-size: 7em;
-  opacity: 0.3;
+  line-height: 150px;
+  font-size: 18em;
+  opacity: 0.2;
   font-family: "JetBrains Mono Light", monospace;
 }
 
@@ -153,11 +153,19 @@ svg {
     transform: scale(1.3);
     top: -20px;
   }
+
+  .title-parallax {
+    left: 30px;
+  }
 }
 
 @media screen and (min-width: 325px) and (max-width: 600px) {
   .cards-wrap {
     height: 200vh;
+  }
+
+  .title-parallax {
+    font-size: 10em;
   }
 
 
