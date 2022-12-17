@@ -44,7 +44,7 @@ export default {
       cardsStack: [{innerText: 'git'}, {innerText: 'Java Spring'}, {innerText: 'MS SQL'},
         {innerText: 'PostgreSQL'}, {innerText: 'JavaScript'}, {innerText: 'CSS/HTML'},
         {innerText: 'Vue.js'}, {innerText: 'Node.js'},
-        {innerText: 'C#'}, {innerText: 'Python'}, {innerText: 'Linux'}],
+        {innerText: 'Python'}, {innerText: 'Linux'}],
       cardsLink: [{innerText: 'github', lnk: 'https://github.com/alexarlord-boop/alexarlord-boop/blob/main/README.md'},
         {innerText: 'VK', lnk: ''}],
     }
