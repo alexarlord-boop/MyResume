@@ -24,7 +24,7 @@
       <div class="links-group">
         <IconGit class="icon-lnk" @click="GoToLnk(cardsLink[0].lnk)"></IconGit>
         <IconVK class="icon-lnk" @click="GoToLnk(cardsLink[1].lnk)"></IconVK>
-        <IconLNKD class="icon-lnk"></IconLNKD>
+        <IconLNKD class="icon-lnk" @click="GoToLnk(cardsLink[2].lnk)"></IconLNKD>
       </div>
     </div>
   </div>
@@ -60,7 +60,7 @@ export default {
       cardsStackBack: [{innerText: 'Java Spring Boot'}, {innerText: 'MS SQL Server'}, {innerText: 'PostgreSQL'}, {innerText: 'Java'}, {innerText: 'Python'}],
 
       cardsLink: [{innerText: 'github', lnk: 'https://github.com/alexarlord-boop/alexarlord-boop/blob/main/README.md'},
-        {innerText: 'VK', lnk: 'https://vk.com/alexarlord'}],
+        {innerText: 'VK', lnk: 'https://vk.com/alexarlord'}, {innerText: 'LinkedIn', lnk: 'https://www.linkedin.com/in/aleksandr-petrunin-b4b720259/'}],
     }
   },
   watch: {
@@ -135,12 +135,6 @@ export default {
   cursor: pointer;
   transition: 0.1s ease-out;
 
-  filter: blur(1px);
-
-  &:hover {
-    transform: scale(1.4);
-    filter: blur(0px);
-  }
 }
 
 .cards-wrap {
@@ -203,10 +197,19 @@ svg {
     font-size: 10em;
   }
 
-
   svg {
     transform: scale(5);
     top: 300px;
+  }
+  .links-group{
+    width: 200px;
+    top: -250px;
+    left: 0;
+  }
+
+  .icon-lnk {
+    width: 10px;
+    height: 10px;
   }
 }
 </style>
