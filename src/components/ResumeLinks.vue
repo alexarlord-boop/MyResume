@@ -70,7 +70,8 @@ export default {
     &:hover {
       z-index: 500;
       transform: scale(1.3) rotate(10deg);
-      background-color: blueviolet;
+
+      background-color: rgba(136, 27, 236, 0.96);
 
     }
   }
