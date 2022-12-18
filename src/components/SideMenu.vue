@@ -2,7 +2,7 @@
   <div class="sideMenu" @mouseover="activate" @mouseleave="deactivate">
     <ul class="menu-item-list" v-bind:class="{active : isActive}">
       <li v-for="(i, index) in items" v-bind:id="'it' + (index + 1)" class="menu-item" @click="transitTo(index + 1)">
-        <p v-if="isActive" class="item-title">{{ i.title }}</p>
+        <p v-bind:class="{active : isActive}" class="item-title">{{ i.title }}</p>
       </li>
     </ul>
   </div>
@@ -83,10 +83,9 @@ export default {
 
 <style scoped lang="scss">
 .sideMenu {
-  top: 10px;
-  right: 0;
   position: fixed;
-  width: 250px;
+  top: 20px;
+  right: 10px;
 }
 
 .menu-item-list {
@@ -103,7 +102,7 @@ export default {
 }
 
 .menu-item-list.active {
-  transform: scale(1);
+  transform: scale(1.3) translateX(-50px);
 }
 
 
@@ -115,7 +114,7 @@ export default {
   margin-top: 25px;
 
   text-align: center;
-  font-size: 1.4em;
+  line-height: 2em;
   cursor: pointer;
   pointer-events: none;
 
@@ -128,15 +127,18 @@ export default {
 
 .item-title {
   position: relative;
-  right: 1px;
-  top: -12px;
+  top: -10px;
   font-family: "Roboto Mono", monospace;
   color: #f2f2f2;
-  font-weight: 800;
-
-  width: 96px;
+  width: 105%;
   border-radius: 25px;
   background-color: #181818;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+
+.item-title.active {
+  opacity: 1;
 }
 
 @media screen and (min-width: 325px) and (max-width: 600px) {
@@ -148,7 +150,6 @@ export default {
   .menu-item-list.active {
     transform: scale(2) translateX(-20px) translateY(20px);
   }
-
 }
 
 </style>
