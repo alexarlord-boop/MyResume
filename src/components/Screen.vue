@@ -7,7 +7,7 @@
         <div><slot name="button"></slot></div>
       </div>
 
-      <Signature></Signature>
+<!--      <Signature></Signature>-->
     </div>
   </div>
 </template>

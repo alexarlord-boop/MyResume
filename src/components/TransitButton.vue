@@ -23,6 +23,7 @@ export default {
 <style scoped lang="scss">
 .transit-btn {
   width: 200px;
+  margin: 20px;
   background-color: #181818;
   border-radius: 35px;
   display: flex;
