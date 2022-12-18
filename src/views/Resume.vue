@@ -28,7 +28,6 @@
 </template>
 
 <script>
-//TODO: -scroll functions optimisation
 //TODO: -refactor mobile version via @media
 import CardInfo from "@/components/CardInfo.vue";
 import IconGit from "@/components/icons/IconGit.vue";

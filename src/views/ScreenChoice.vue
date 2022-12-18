@@ -2,9 +2,11 @@
   <ScreenIntro>
     <Screen id="1">
       <template v-slot:title>My Resume</template>
-      <template v-slot:comment><a href="/resume">explore</a></template>
+      <template v-slot:comment><TransitButton :lnk="'/resume'"></TransitButton></template>
     </Screen>
+
   </ScreenIntro>
+
 
   <ScreenFinapp>
     <Screen id="2">
@@ -32,15 +34,16 @@
 
 <script>
 import Screen from "@/components/Screen.vue";
-import MouseTracker from "@/components/MouseTracker.vue";
 import SideMenu from "@/components/SideMenu.vue";
 import ScreenLib from "@/components/ScreenLib.vue";
 import ScreenFinapp from "@/components/ScreenFinapp.vue";
 import ScreenIntro from "@/components/ScreenIntro.vue";
+import TransitButton from "@/components/TransitButton.vue";
 
 export default {
   name: "ScreenChoice",
   components: {
+    TransitButton,
     Screen,
     ScreenIntro,
     ScreenFinapp,
