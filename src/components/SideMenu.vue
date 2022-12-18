@@ -81,10 +81,10 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .sideMenu {
   top: 10px;
-  right: 40px;
+  right: 0;
   position: fixed;
   width: 250px;
 }
@@ -104,7 +104,6 @@ export default {
 
 .menu-item-list.active {
   transform: scale(1);
-
 }
 
 
@@ -142,8 +141,12 @@ export default {
 
 @media screen and (min-width: 325px) and (max-width: 600px) {
   .sideMenu {
-    top: 10px;
-    right: -40px;
+    top: -10px;
+    right: -70px;
+    transform: scale(0.5);
+  }
+  .menu-item-list.active {
+    transform: scale(2) translateX(-20px) translateY(20px);
   }
 
 }
