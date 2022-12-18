@@ -2,9 +2,9 @@
   <ScreenIntro>
     <Screen id="1">
       <template v-slot:title>My Resume</template>
-      <template v-slot:comment><TransitButton :lnk="'/resume'"></TransitButton></template>
+      <template v-slot:comment></template>
+      <template v-slot:button><TransitButton :lnk="'/resume'"></TransitButton></template>
     </Screen>
-
   </ScreenIntro>
 
 
@@ -15,16 +15,16 @@
         <p>Deal with expenses as fast as possible!</p>
         <p>Charts, calculator, profit locator</p>
       </template>
+      <template v-slot:button><TransitButton :lnk="'/'"></TransitButton></template>
     </Screen>
-    <template v-slot:visit-btn>Discover</template>
   </ScreenFinapp>
 
   <ScreenLib>
     <Screen id="3" :screen-id="3">
       <template v-slot:title>Neapolis University Library</template>
       <template v-slot:comment>Software for booking and loaning Knowledge</template>
+      <template v-slot:button><TransitButton :lnk="'/'"></TransitButton></template>
     </Screen>
-    <template v-slot:visit-btn>Book Online!</template>
   </ScreenLib>
 
 

@@ -1,10 +1,6 @@
 <template>
   <div id="fin" class="wrap">
     <slot></slot>
-    <div class="visitBtn">
-      <slot name="visit-btn"></slot>
-    </div>
-
   </div>
 </template>
 
@@ -34,22 +30,6 @@ export default {
   justify-content: center;
   align-items: center;
   background: conic-gradient(from 60deg, rgba(103, 89, 221, 1) 50%, rgba(41, 171, 226, 1) 90%);
-}
-
-.visitBtn {
-  position: absolute;
-  top: 65vh;
-
-  font-family: "Roboto Mono", monospace;
-  color: #b3fcff;
-  cursor: pointer;
-  border-radius: 5px;
-
-  font-size: 1.5em;
-  font-weight: 500;
-
-  animation: scale-easeOutElastic 3s;
-  animation-iteration-count: infinite;
 }
 
 @keyframes scale-easeOutElastic {

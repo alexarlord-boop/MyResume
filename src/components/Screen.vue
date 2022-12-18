@@ -2,9 +2,9 @@
   <div class="back">
     <div class="container">
       <div data-tilt class="content" v-on:click="expand = !expand">
-
         <div class="title"><slot name="title"></slot></div>
         <div class="comment"><slot name="comment"></slot></div>
+        <div><slot name="button"></slot></div>
       </div>
 
       <Signature></Signature>

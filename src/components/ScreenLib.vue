@@ -1,9 +1,6 @@
 <template>
   <div id="lib" class="wrap">
     <slot></slot>
-  <button class="visitBtn">
-    <slot name="visit-btn"></slot>
-  </button>
   </div>
 </template>
 
@@ -33,18 +30,6 @@ export default {
   justify-content: center;
   align-items: center;
   background: linear-gradient(90deg, rgba(41,171,226,1) 40%, rgba(15,79,131,1) 90%,rgba(41,171,226,1) 75%);
-}
-
-.visitBtn {
-  position: absolute;
-  top: 65vh;
-
-  width: 170px;
-  height: 30px;background-color: #b3fcff;
-  cursor: pointer;
-  border-radius: 5px;
-
-  font-size: 1.2em;
 }
 
 @media screen and (min-width: 325px) and (max-width: 600px) {
