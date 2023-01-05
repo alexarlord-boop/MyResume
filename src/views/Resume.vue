@@ -52,7 +52,7 @@ export default {
         {innerText: "I am passionate about software development and making products look AMAZING!"},
         {innerText: "I've been working as a full-stack developer for 1.5 years!"},
       ],
-      cardsStackFront: [{innerText: 'Git'}, {innerText: 'SQL'}, {innerText: 'JavaScript'}, {innerText: 'CSS3/HTML5'},
+      cardsStackFront: [{innerText: 'Git'}, {innerText: 'JavaScript'}, {innerText: 'CSS3/HTML5'},
         {innerText: 'Figma'}, {innerText: 'Vue.js'}, {innerText: 'Node.js'}],
 
       cardsStackBack: [{innerText: 'Java Spring Boot'}, {innerText: 'MS SQL Server'}, {innerText: 'PostgreSQL'}, {innerText: 'Java'}, {innerText: 'Python'}]
