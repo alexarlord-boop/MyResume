@@ -70,9 +70,7 @@ export default {
     &:hover {
       z-index: 500;
       transform: scale(1.3) rotate(10deg);
-
-      background-color: rgba(136, 27, 236, 0.96);
-
+      background: rgba(127, 84, 255, 0.88);
     }
   }
 }
