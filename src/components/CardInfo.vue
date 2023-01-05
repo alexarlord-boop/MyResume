@@ -20,9 +20,9 @@ export default {
 <style scoped>
 
 .card {
-  font-size: 1.2em;
+  font-size: 2.2em;
   text-align: center;
-
+  margin: 5px;
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(80, 76, 76, 0.1);
   backdrop-filter: blur(20px);

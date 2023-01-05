@@ -49,8 +49,8 @@ export default {
       pl: 0,
       percentage: 0,
       cardsAbout: [{innerText: "I am an IT student, seeking for improvement in computer science field."},
-        {innerText: "I am passionate about software development and making product looks AMAZING!"},
-        {innerText: "I've worked as a full-stack developer for 1.5 years!"},
+        {innerText: "I am passionate about software development and making products look AMAZING!"},
+        {innerText: "I've been working as a full-stack developer for 1.5 years!"},
       ],
       cardsStackFront: [{innerText: 'Git'}, {innerText: 'SQL'}, {innerText: 'JavaScript'}, {innerText: 'CSS3/HTML5'},
         {innerText: 'Figma'}, {innerText: 'Vue.js'}, {innerText: 'Node.js'}],
@@ -126,7 +126,6 @@ export default {
 }
 
 .cards-group {
-
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
